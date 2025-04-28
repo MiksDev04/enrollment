@@ -163,7 +163,7 @@ $conn->close();
                     </div>
                 </div>
                 <button type="submit" name="login" class="btn btn-primary-custom w-100 btn-lg">Login</button>
-                <p class="auth-footer">Don't have an account? <a href="home/register.php">Create one</a></p>
+                <p class="auth-footer">Don't have an account? <a href="accounts/register.php">Create one</a></p>
             </form>
         </div>
     </div>

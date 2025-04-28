@@ -65,6 +65,7 @@ $result = mysqli_query($conn, $query);
                                 <td>
                                     <a href="edit.php?id=<?= $student['id'] ?>" class="btn btn-sm btn-primary">🛠️</a>
                                     <a href="delete.php?id=<?= $student['id'] ?>" class="btn btn-sm btn-danger" onclick="return confirm('Are you sure you want to delete this student?')">🗑️</a>
+                                    <a href="view.php?id=<?= $student['id'] ?>" class="btn btn-sm btn-info">👁️</a>
                                 </td>
                             </tr>
                         <?php endwhile; ?>
