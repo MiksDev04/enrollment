@@ -1,0 +1,86 @@
+:root {
+    --primary-color: #4e73df;
+    --secondary-color: #1cc88a;
+    --accent-color: #f6c23e;
+    --dark-color: #5a5c69;
+}
+
+body {
+    background-color: #f8f9fc;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.navbar {
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%) !important;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.card {
+    border: none;
+    border-radius: 0.35rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1.5rem 0 rgba(58, 59, 69, 0.2);
+}
+
+.card.students {
+    border-left: 0.25rem solid var(--primary-color);
+}
+
+.card.courses {
+    border-left: 0.25rem solid var(--secondary-color);
+}
+
+.card.enrollments {
+    border-left: 0.25rem solid var(--accent-color);
+}
+
+.count-display {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+}
+
+.welcome-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, #224abe 100%);
+    color: white;
+    border-radius: 0.35rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2653d4;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+    fill: currentColor;
+}
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: text-top;
+    fill: currentColor;
+}
