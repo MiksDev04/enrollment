@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/config.php';
+require_once '../includes/config.php';
 
 $student_id = $_GET['id'] ?? null;
 
@@ -20,13 +20,15 @@ if (!$student) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enrollment Successful</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="enrollment-container">
         <div class="enrollment-header text-center">
@@ -54,8 +56,8 @@ if (!$student) {
                     <div class="student-info">
                         <p><strong>Student ID:</strong> <?php echo $student['student_id']; ?></p>
                         <p><strong>Name:</strong> <?php echo htmlspecialchars($student['first_name'] . ' ' . htmlspecialchars($student['last_name'])); ?></p>
-                        <p><strong>Program:</strong> 
-                            <?php 
+                        <p><strong>Program:</strong>
+                            <?php
                             $program_stmt = $conn->prepare("SELECT program_name FROM programs WHERE program_id = ?");
                             $program_stmt->bind_param("i", $student['program_id']);
                             $program_stmt->execute();
@@ -76,13 +78,15 @@ if (!$student) {
             <ul>
                 <li>You will receive an email with further instructions</li>
                 <li>Attend the orientation session on [date]</li>
-                <li>Complete your registration by paying the fees</li>
+                <li>Complete your registration by confirming your class schedule</li>
             </ul>
+
         </div>
 
         <div class="text-center mt-4">
-            <a href="index.php" class="btn btn-primary">Return to Home</a>
+            <a href="../home.php" class="btn btn-primary">Return to Home</a>
         </div>
     </div>
 </body>
+
 </html>

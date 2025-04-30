@@ -1,9 +1,11 @@
 <?php
-require_once 'includes/functions.php';
+require_once '../includes/config.php';
+require_once '../includes/functions.php';
 $programs = getPrograms();
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +13,18 @@ $programs = getPrograms();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="enrollment/client/assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="enrollment-container">
-        <div class="enrollment-header">
+        <div class="enrollment-header position-relative">
+            <a href="../home.php" class=" position-absolute btn bg-body-tertiary d-flex align-items-center gap-2" style="left: 1rem; top: 1rem;">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="black" width="1.2rem" height="1.2rem" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                    <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z" />
+                </svg>
+                <span class=" fw-medium">Back</span>
+            </a>
             <div class="header-icon">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
@@ -35,7 +44,7 @@ $programs = getPrograms();
                     </svg>
                     <h2>Personal Information</h2>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
@@ -56,7 +65,7 @@ $programs = getPrograms();
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
@@ -91,7 +100,7 @@ $programs = getPrograms();
                     </svg>
                     <h2>Contact Information</h2>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -106,7 +115,7 @@ $programs = getPrograms();
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="address">Full Address</label>
                     <textarea id="address" name="address" rows="3" required></textarea>
@@ -121,7 +130,7 @@ $programs = getPrograms();
                     </svg>
                     <h2>Academic Information</h2>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -170,4 +179,5 @@ $programs = getPrograms();
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

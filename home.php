@@ -51,10 +51,30 @@
             background-color: var(--primary-blue);
             border-color: var(--primary-blue);
         }
+
+        .btn-outline-primary {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
         
         .btn-primary:hover {
             background-color: var(--secondary-blue);
             border-color: var(--secondary-blue);
+        }
+
+        .btn-outline-primary:hover {
+            border-color: var(--secondary-blue);
+            color: var(--secondary-blue);
+        }
+
+        .btn-white {
+            border-color: white;
+            color: white;
+        }
+        
+        .btn-white:hover {
+            background-color: white;
+            color: black;
         }
         
         .feature-icon {
@@ -137,6 +157,9 @@
                     <li class="nav-item ms-lg-3">
                         <a class="btn btn-primary" href="#enroll-now">Enroll Now</a>
                     </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-outline-primary" href="login.php">Login</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -147,7 +170,10 @@
         <div class="container">
             <h1 class="display-4 fw-bold mb-4">Shape Your Future With Excellence</h1>
             <p class="lead mb-5">Join a community of innovative thinkers and leaders at Prestige University</p>
-            <a href="#enroll-now" class="btn btn-primary btn-lg px-5 py-3">Start Your Application</a>
+            <div class="d-flex flex-wrap gap-2 justify-content-center">
+                <a href="#enroll-now" class="btn btn-primary btn-lg px-5 py-3">Start Your Application</a>
+                <a href="login.php" class="btn btn-white btn-lg px-5 py-3">Open Your Account</a>
+            </div>
         </div>
     </section>
 
@@ -290,7 +316,7 @@
         <div class="container text-center">
             <h2 class="display-5 fw-bold mb-4">Ready to Join Our Community?</h2>
             <p class="lead mb-5">Applications for the next academic year are now open. Don't miss your chance to be part of Prestige University.</p>
-            <a href="client/uploads/enrollment_form.php" class="btn btn-light btn-lg px-5 py-3">Enroll Now</a>
+            <a href="student/enrollment_form.php" class="btn btn-light btn-lg px-5 py-3">Enroll Now</a>
         </div>
     </section>
 
