@@ -39,21 +39,15 @@ require_once '../includes/header.php';
 
             <div class="card mb-4">
                 <div class="card-header">
-                    <h5><?= $professor['first_name'] . ' ' . $professor['last_name'] ?></h5>
+                    <h5>Professor Information</h5>
                 </div>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-4 text-center">
-                            <?php if ($professor['profile_image']): ?>
-                                <img src="<?= $professor['profile_image'] ?>" class="img-thumbnail mb-3" style="max-width: 200px;">
-                            <?php else: ?>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" fill="#ccc" viewBox="0 0 16 16">
-                                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
-                                </svg>
-                            <?php endif; ?>
-                        </div>
                         <div class="col-md-8">
-                            <div class="row mb-3">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p><strong>Professor Name:</strong> <?= $professor['first_name'] . ' ' . $professor['last_name'] ?></p>
+                                </div>
                                 <div class="col-md-6">
                                     <p><strong>Professor ID:</strong> <?= $professor['professor_id'] ?></p>
                                 </div>
@@ -61,7 +55,7 @@ require_once '../includes/header.php';
                                     <p><strong>Department:</strong> <?= $professor['department_name'] ?></p>
                                 </div>
                             </div>
-                            <div class="row mb-3">
+                            <div class="row">  
                                 <div class="col-md-6">
                                     <p><strong>Email:</strong> <?= $professor['email'] ?></p>
                                 </div>

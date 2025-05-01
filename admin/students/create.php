@@ -1,48 +1,6 @@
 <?php 
 require_once '../config.php';
-checkAdminLogin();
-
-// Get programs for dropdown
-$programs = $conn->query("SELECT * FROM programs");
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $student_id = $_POST['student_id'] ?? '';
-    $first_name = $_POST['first_name'] ?? '';
-    $last_name = $_POST['last_name'] ?? '';
-    $middle_name = $_POST['middle_name'] ?? '';
-    $birthdate = $_POST['birthdate'] ?? '';
-    $gender = $_POST['gender'] ?? '';
-    $email = $_POST['email'] ?? '';
-    $phone = $_POST['phone'] ?? '';
-    $address = $_POST['address'] ?? '';
-    $program_id = $_POST['program_id'] ?? '';
-    $year_level = $_POST['year_level'] ?? '';
-    $status = $_POST['status'] ?? 'Regular';
-
-    // Handle file upload
-    $profile_image = null;
-    if (isset($_FILES['profile_image']) && $_FILES['profile_image']['error'] === UPLOAD_ERR_OK) {
-        $file = $_FILES['profile_image'];
-        $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-        $filename = $student_id . '.' . $extension;
-        $destination = UPLOAD_DIR . $filename;
-        
-        if (move_uploaded_file($file['tmp_name'], $destination)) {
-            $profile_image = $destination;
-        }
-    }
-
-    $stmt = $conn->prepare("INSERT INTO students (student_id, first_name, last_name, middle_name, birthdate, gender, email, phone, address, profile_image, program_id, year_level, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-    $stmt->bind_param("ssssssssssiis", $student_id, $first_name, $last_name, $middle_name, $birthdate, $gender, $email, $phone, $address, $profile_image, $program_id, $year_level, $status);
-    
-    if ($stmt->execute()) {
-        header("Location: index.php?success=Student added successfully");
-        exit();
-    } else {
-        $error = "Error adding student: " . $conn->error;
-    }
-}
-
+$programs = getAllRecords("programs");
 require_once '../includes/header.php'; 
 ?>
 
@@ -66,13 +24,9 @@ require_once '../includes/header.php';
 
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" enctype="multipart/form-data">
+                    <form method="POST" action="../process_enrollment.php" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="mb-3">
-                                    <label for="student_id" class="form-label">Student ID</label>
-                                    <input type="text" class="form-control" id="student_id" name="student_id" required>
-                                </div>
                                 <div class="mb-3">
                                     <label for="first_name" class="form-label">First Name</label>
                                     <input type="text" class="form-control" id="first_name" name="first_name" required>
@@ -98,12 +52,12 @@ require_once '../includes/header.php';
                                         <option value="Other">Other</option>
                                     </select>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
                                     <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
+                            </div>
+                            <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="phone" class="form-label">Phone</label>
                                     <input type="tel" class="form-control" id="phone" name="phone" required>
@@ -120,10 +74,11 @@ require_once '../includes/header.php';
                                     <label for="program_id" class="form-label">Program</label>
                                     <select class="form-select" id="program_id" name="program_id" required>
                                         <option value="">Select Program</option>
-                                        <?php while ($program = $programs->fetch_assoc()): ?>
+                                        <?php foreach($programs as $program): ?>
                                             <option value="<?= $program['program_id'] ?>"><?= $program['program_name'] ?></option>
-                                        <?php endwhile; ?>
+                                        <?php endforeach; ?>
                                     </select>
+                                   
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">

@@ -1,5 +1,5 @@
 <?php
-require_once 'config.php';
+require_once '../config.php';
 
 // Function to generate student ID
 function generateStudentID($conn) {
@@ -8,7 +8,6 @@ function generateStudentID($conn) {
     $count = $result['total'] + 1;
     return 'STU-' . date('Y') . '-' . str_pad($count, 5, '0', STR_PAD_LEFT);
 }
-
 
 // Function to get programs from database
 function getPrograms() {
