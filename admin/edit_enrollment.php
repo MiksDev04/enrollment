@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $destination = UPLOAD_DIR . $filename;
         
         // Check if file is an image
-        $allowed_types = ['image/jpeg', 'image/png', 'image/gif'];
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/jpg'];
         if (in_array($file['type'], $allowed_types)) {
             if (move_uploaded_file($file['tmp_name'], $destination)) {
                 // Delete old image if it exists

@@ -1,12 +1,8 @@
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer mt-auto text-center py-3 bg-light">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
                 <span class="text-muted">University Management System &copy; <?= date('Y') ?></span>
-            </div>
-            <div class="col-md-6 text-end">
                 <span class="text-muted">v1.0.0</span>
-            </div>
         </div>
     </div>
 </footer>
@@ -18,6 +14,7 @@
     var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
+    
 </script>
 </body>
 </html>

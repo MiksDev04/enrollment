@@ -14,8 +14,8 @@ require_once '../includes/header.php';
             </div>
 
             <!-- Stats Cards -->
-            <div class="row mb-4">
-                <div class="col-md-3">
+            <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 mb-4">
+                <div class="col">
                     <div class="card text-white bg-primary mb-3">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -36,7 +36,7 @@ require_once '../includes/header.php';
                     </div>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col">
                     <div class="card text-white bg-success mb-3">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -57,7 +57,7 @@ require_once '../includes/header.php';
                     </div>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col">
                     <div class="card text-white bg-info mb-3">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -78,7 +78,7 @@ require_once '../includes/header.php';
                     </div>
                 </div>
                 
-                <div class="col-md-3">
+                <div class="col">
                     <div class="card text-white bg-warning mb-3">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
