@@ -3,7 +3,7 @@ require_once '../includes/config.php';
 session_start(); // ✅ REQUIRED to access session data
 // Check if student is logged in
 if (!isset($_SESSION['user_type']) || $_SESSION['user_type'] !== 'student') {
-    header("Location: /enrollment/login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -39,7 +39,7 @@ $enrollments = $conn->query("
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
-    <link href="/enrollment/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --primary-blue: #1a73e8;
@@ -150,6 +150,6 @@ $enrollments = $conn->query("
         </div>
     </div>
 
-    <script src="/enrollment/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

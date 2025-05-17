@@ -25,7 +25,7 @@ if (!$student) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enrollment Successful</title>
-    <link href="/enrollment/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 
@@ -87,7 +87,7 @@ if (!$student) {
             <a href="../home.php" class="btn btn-primary">Return to Home</a>
         </div>
     </div>
-    <script src="/enrollment/bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="../bootstrap-5.3.3-dist/bootstrap-5.3.3-dist/js/bootstrap.bundle.js"></script>
 </body>
 
 </html>
